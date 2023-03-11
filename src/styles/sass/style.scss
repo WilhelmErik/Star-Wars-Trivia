@@ -1,0 +1,19 @@
+.people {
+
+    display: grid;
+    grid-template-rows: minmax(100px, auto);
+    grid-template-columns: minmax(20%, 50%)minmax(20%, 50%);
+    background-color: rgb(217, 109, 109);
+
+    /* grid-column: 1fr, 1fr; */
+    div {
+        border: rgb(0, 4, 255) 2px inset;
+
+
+        p {
+            max-width: 50%;
+            color: rgb(28, 29, 29);
+        }
+    }
+
+}
