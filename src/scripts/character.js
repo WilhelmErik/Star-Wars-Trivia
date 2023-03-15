@@ -93,7 +93,7 @@ class Character {
             "Their most expensive vehicle is the " + mostExpensive.name +
             (mostExpensive.cost_in_credits === 'unknown'
                 ? ', but its cost is unknown'
-                : "which cost is " + mostExpensive.cost_in_credits + " credits");
+                : " which cost is " + mostExpensive.cost_in_credits + " credits");
 
 
 
