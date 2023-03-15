@@ -5,8 +5,8 @@ import { compareNumeric } from "./character.js";
 
 
 let video = document.getElementById("loading-video");
-const mobileSrc = './assets/videos/Loading-Screen-mobile.mp4';
-const desktopSrc = './assets/videos/Loading-Screens.mp4';
+const mobileSrc = './src/assets/videos/Loading-Screen-mobile.mp4';
+const desktopSrc = './src/assets/videos/Loading-Screens.mp4';
 
 
 let charwindows1 = document.getElementById("person1-info")
