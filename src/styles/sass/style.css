@@ -4,6 +4,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 .people {
   display: grid;
   grid-template-rows: minmax(300px, auto);
@@ -11,12 +12,14 @@
   color: aliceblue;
   /* grid-column: 1fr, 1fr; */
 }
+
 .people .person {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
 #clickie {
   margin: 1rem;
   padding: 1rem;
@@ -31,8 +34,8 @@
 
 main {
   text-align: center;
-  background-image: url("/src/assets/images/background1.gif");
-  background: linear-gradient(to top, rgba(27, 19, 41, 0.7294117647), rgba(8, 6, 10, 0.5098039216)), url("/src/assets/images/background1.gif");
+  /* background-image: url("/src/assets/images/background1.gif"); */
+  background: linear-gradient(to top, rgba(27, 19, 41, 0.7294117647), rgba(8, 6, 10, 0.5098039216)), url("../../assets/images/background1.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 30%;
@@ -65,6 +68,7 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 #loading-check input.loading-check {
   height: 20px;
   width: 20px;
@@ -78,7 +82,7 @@ body {
   height: 100%;
   z-index: 9999;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   background-color: black;
   visibility: hidden;
 }
@@ -88,6 +92,7 @@ body {
   align-self: center;
   min-height: 50%;
 }
+
 #stats p {
   font-size: 20px;
   color: aliceblue;
@@ -107,6 +112,7 @@ body {
   background-position: center 20%;
   background-size: cover;
 }
+
 .profile-picture img {
   border-radius: 16px;
   max-width: 360px;
@@ -115,7 +121,7 @@ body {
   max-width: 96%;
   width: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 1024px) {
@@ -126,10 +132,12 @@ body {
     color: aliceblue;
   }
 }
+
 @media screen and (max-width: 600px) {
   body {
     background-color: olive;
   }
+
   #loading-video {
     position: fixed;
     bottom: 0;
@@ -138,12 +146,13 @@ body {
     height: 100%;
     z-index: 9999;
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     background-color: black;
     visibility: hidden;
     src: url("..../");
   }
 }
+
 .card {
   color: #f0f0f0;
   display: flex;
@@ -219,4 +228,6 @@ body {
 .card-id {
   padding-top: 10px;
   padding: 5px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

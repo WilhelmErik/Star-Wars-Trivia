@@ -66,9 +66,9 @@ main {
     text-align: center;
 
 
-    background-image: url("/src/assets/images/background1.gif");
+     background-image: url("/src/assets/images/background1.gif");
 
-    background: linear-gradient(to top, #1b1329ba, #08060a82), url("/src/assets/images/background1.gif");
+    background: linear-gradient(to top, #1b1329ba, #08060a82), "../src/assets/images/background1.gif";
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center 30%;
