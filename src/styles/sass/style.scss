@@ -1,19 +1,171 @@
 .people {
 
+
     display: grid;
     grid-template-rows: minmax(100px, auto);
-    grid-template-columns: minmax(20%, 50%)minmax(20%, 50%);
-    background-color: rgb(217, 109, 109);
+    grid-template-columns: minmax(20%, 50%)minmax(10%, 20%)minmax(20%, 50%);
+    // background-color: rgb(10, 10, 10);
+    color: aliceblue;
 
     /* grid-column: 1fr, 1fr; */
+
+
+
     div {
-        border: rgb(0, 4, 255) 2px inset;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        // justify-content: center;
 
 
         p {
-            max-width: 50%;
-            color: rgb(28, 29, 29);
+            margin: 5px;
+            text-align: center;
+            padding: 0.2rem;
+            color: rgb(249, 177, 84);
+            // border: rgb(255, 89, 0) 2px inset;
+            background-color: rgba(0, 0, 0, 0.538);
         }
+    }
+
+}
+
+#clickie {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 24px;
+    border-radius: 2rem;
+    border-style: none;
+    box-shadow: 1px 5px;
+}
+
+main {
+    text-align: center;
+
+
+    background-image: url("/src/assets/images/background1.gif");
+
+    background: linear-gradient(to top, #1b1329ba, #08060a82), url("/src/assets/images/background1.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 30%;
+}
+
+select {
+    color: aliceblue;
+    background-color: black;
+}
+
+body {
+    background-color: rgb(6, 5, 5);
+    height: 100vh;
+}
+
+#loading-check {
+    display: flex;
+    font-size: 24px;
+    color: aliceblue;
+    background-color: rgb(12, 10, 10);
+    justify-content: center;
+    align-items: center;
+
+    input.loading-check {
+        height: 20px;
+        width: 20px;
+
+    }
+}
+
+#loading-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    object-fit: cover;
+    background-color: black;
+    visibility: hidden;
+
+
+    // display: none;
+}
+
+#stats {
+    align-self: center;
+    height: 50%;
+    background-color: rgba(12, 10, 7, 0.578);
+
+    p {
+        color: aliceblue;
+    }
+}
+
+
+.profile-picture {
+    margin: auto;
+    width: 90%;
+    height: 244px;
+    max-width: 358px;
+    border-radius: 16px;
+    background-color: rgb(36, 34, 34);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-image: url("./assets/img/characters/3.jpg"), url("./assets/img/big-placeholder.jpg");
+    background: center;
+    background-position: center 20%;
+    background-size: cover;
+
+
+    img {
+        border-radius: 16px;
+        max-width: 360px;
+        // max-height: 244px;
+        max-height: 90%;
+        margin: auto;
+        max-width: 96%;
+        // max-height: 100%;
+
+        width: 100%;
+        object-fit: cover
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    body {
+        background-color: olive;
+    }
+
+    #loading-video {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        object-fit: cover;
+        background-color: black;
+        visibility: hidden;
+        src: url("..../");
+
+
+        // display: none;
     }
 
 }

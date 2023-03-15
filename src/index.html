@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,23 +14,86 @@
 </head>
 
 <body>
-    <main class="main">
-        <div id="select">
-            <select name="" id=""></select>
+    <header>
 
-        </div>
+
+        <!-- <img ng-src="./assets/img/characters/1.jpg" onerror="this.src='./assets/img/placeholder.jpg'"
+            src="./assets/img/characters/1.jpg">
+             -->
+    </header>
+
+    <video id="loading-video" src="" autoplay loop muted></video>
+
+
+    <main class="main">
+
         <div class="people">
             <div id="person1">
 
-            </div>
-            <div id="person2">
+                <select name="select1" id="select1">
+                    <option value="1">Luke Skywalker</option>
+                    <option value="2">C-3PO</option>
+                    <option value="3">R2-D2</option>
+                    <option value="4">Darth Vader</option>
+                    <option value="5">Leia Organa</option>
+                    <option value="6">Owen Lars</option>
+                </select>
 
+
+                <div class="profile-picture" id="pfp1">
+                    <!-- <img src="" alt="" id="person2-img"> -->
+
+
+                </div>
+                <div id="person1-info">
+
+
+
+                </div>
+            </div>
+
+            <div id="stats">
+
+            </div>
+
+            <div id="person2">
+                <select name="select2" id="select2">
+                    <option value="1">Luke Skywalker</option>
+                    <option value="2">C-3PO</option>
+                    <option value="3">R2-D2</option>
+                    <option value="4">Darth Vader</option>
+                    <option value="5">Leia Organa</option>
+                    <option value="6">Owen Lars</option>
+                    <option value="11">Anakin Skywalker</option>
+                </select>
+
+                <div class="profile-picture" id="pfp2">
+                    <!-- <img src="" alt="" id="person2-img"> -->
+
+
+                </div>
+                <div id="person2-info">
+
+                </div>
+
+                <div class="messagebox">
+                    Hejsan
+                </div>
             </div>
         </div>
 
+        <div id="loading-check">
+            <button id="clickie">Compare Characters</button>
 
-        <button id="clickie">CLICKIE</button>
+
+            <label for="loadingScreen"> Loading Screen ?
+                <input type="checkbox" name="loadingScreen" id="loadingScreen" class="loading-check">
+            </label>
+
+
+        </div>
     </main>
+
 
 
 </body>
