@@ -51,6 +51,9 @@ async function fetchAndPrint(obj1, obj2) {
         let character1Img = document.getElementById("person1-img")
         let character2Img = document.getElementById("person2-img")
 
+        document.getElementById("card1").style.display = "block"
+        document.getElementById("card2").style.display = "block"
+
         let pfp1 = document.getElementById("pfp1")
         let pfp2 = document.getElementById("pfp2")
         pfp1.style.backgroundImage = 'url("./assets/images/people/image' + obj1.id + '.jpg") , url("./assets/images/people/errorDroid.jpg") '
