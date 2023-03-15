@@ -55,9 +55,9 @@ async function fetchAndPrint(obj1, obj2) {
         let pfp1 = document.getElementById("card-img1")
         let pfp2 = document.getElementById("card-img2")
 
-        pfp1.style.backgroundImage = 'url("./assets/images/people/image' + obj1.id + '.jpg") , url("./assets/images/people/errorDroid.jpg") '
+        pfp1.style.backgroundImage = 'url("./src/assets/images/people/image' + obj1.id + '.jpg") , url("./src/assets/images/people/errorDroid.jpg") '
 
-        pfp2.style.backgroundImage = 'url("./assets/images/people/image' + obj2.id + '.jpg"), url("./assets/images/people/error.jpg")'
+        pfp2.style.backgroundImage = 'url("./src/assets/images/people/image' + obj2.id + '.jpg"), url("./src/assets/images/people/error.jpg")'
 
         //--- Im dumb
         let addInfo1 = document.getElementById("additional-info1")
