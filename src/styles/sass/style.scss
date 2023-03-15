@@ -1,9 +1,29 @@
+@font-face {
+    font-family: 'StarWars';
+    src: url('/src/assets/fonts/Starjhol.ttf') format('truetype'),
+        url('fonts/CustomFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+
 .people {
+
+    .person {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
 
     display: grid;
-    grid-template-rows: minmax(100px, auto);
-    grid-template-columns: minmax(20%, 50%)minmax(10%, 20%)minmax(20%, 50%);
+    grid-template-rows: minmax(300px, auto);
+    grid-template-columns: minmax(20%, 50%)minmax(10%, 30%)minmax(20%, 50%);
     // background-color: rgb(10, 10, 10);
     color: aliceblue;
 
@@ -19,12 +39,12 @@
 
 
         p {
-            margin: 5px;
-            text-align: center;
-            padding: 0.2rem;
-            color: rgb(249, 177, 84);
-            // border: rgb(255, 89, 0) 2px inset;
-            background-color: rgba(0, 0, 0, 0.538);
+            // margin: 5px;
+            // text-align: center;
+            // padding: 0.2rem;
+            // color: rgb(249, 177, 84);
+            // // border: rgb(255, 89, 0) 2px inset;
+            // background-color: rgba(0, 0, 0, 0.5);
         }
     }
 
@@ -35,8 +55,11 @@
     padding: 1rem;
     font-size: 24px;
     border-radius: 2rem;
-    border-style: none;
+    border-style: inset;
     box-shadow: 1px 5px;
+    font-family: 'StarWars';
+    background-color: rgba(0, 0, 0, 0.052);
+    color: yellow;
 }
 
 main {
@@ -51,7 +74,18 @@ main {
     background-position: center 30%;
 }
 
+
+h1 {
+    font-family: 'StarWars', sans-serif;
+    font-weight: 900;
+    font-size: 42px;
+    color: rgb(186, 178, 30);
+}
+
 select {
+    font-size: 18px;
+    padding: 5px 10px;
+    // font-family: StarWars;
     color: aliceblue;
     background-color: black;
 }
@@ -92,11 +126,13 @@ body {
 }
 
 #stats {
+    border-radius: 50px;
     align-self: center;
-    height: 50%;
-    background-color: rgba(12, 10, 7, 0.578);
+    min-height: 50%;
+    // background-color: rgba(12, 10, 7, 0);
 
     p {
+        font-size: 20px;
         color: aliceblue;
     }
 }
@@ -141,7 +177,15 @@ body {
 
 
 
+@media screen and (max-width: 1024px) {
+    .people {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr; // background-color: rgb(10, 10, 10);
+        color: aliceblue;
+    }
 
+}
 
 
 
@@ -203,8 +247,9 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: auto;
+    display: none;
 
-     display: none;
+    margin-top: 10%;
 }
 
 .card-header {
@@ -218,7 +263,10 @@ body {
 .card-id,
 .card-name {
     font-weight: bold;
+    font-size: 20px;
+    color: #ebe9dbe6;
 }
+
 
 .card-img {
     margin: auto;
@@ -227,9 +275,10 @@ body {
     max-width: 358px;
     border-radius: 16px;
 
-    background-image: url("https://www.slashfilm.com/img/gallery/heres-what-the-new-luke-skywalker-looks-like-under-his-digital-mask/intro-1644193087.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
+    // background-image: url("https://www.slashfilm.com/img/gallery/heres-what-the-new-luke-skywalker-looks-like-under-his-digital-mask/intro-1644193087.jpg");
+
+    background: center;
+    background-position: center 20%;
     background-size: cover;
 }
 
@@ -238,9 +287,11 @@ body {
 }
 
 .card-info {
+    font-size: 20px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem;
+    border-bottom: rgba(203, 203, 203, 0.638) 2px inset;
 }
 
 .info-label {
@@ -252,6 +303,7 @@ body {
     background-color: rgba(53, 45, 45, 0.8);
     font-size: 0.9rem;
     text-align: justify;
+    display: none;
 }
 
 .circleID {

@@ -19,7 +19,7 @@ class Character {
         return data;
     }
 
-    async getMatchingMovies(char1, char2) {
+    static async getMatchingMovies(char1, char2) {
         const movies1 = char1.films
         const movies2 = char2.films
         const matchingMovies = movies1.filter(movie => movies2.includes(movie));
@@ -52,6 +52,8 @@ class Character {
         return false;
     }
 
+
+
     async mostExpensiveVessel() {
         // Hämta alla vehicles och all spaceships, populata en array med alla api
         const vesselData = [...this.vehicles, ...this.starships]
@@ -60,7 +62,7 @@ class Character {
 
         if (vesselData.length === 0) {
             console.log('This character has no vehicles or starships.');
-            return;
+            return 'This character has no vehicles or starships.'
         }
 
 
@@ -88,10 +90,10 @@ class Character {
 
 
         const vesselInformation =
-            "Their most expensive vehicle is the " + mostExpensive.name + " which cost is " +
+            "Their most expensive vehicle is the " + mostExpensive.name +
             (mostExpensive.cost_in_credits === 'unknown'
-                ? 'unknown'
-                : mostExpensive.cost_in_credits + " credits");
+                ? ', but its cost is unknown'
+                : "which cost is " + mostExpensive.cost_in_credits + " credits");
 
 
 
@@ -102,6 +104,7 @@ class Character {
 
         console.log(allVessels[0].name)
 
+        return vesselInformation
 
         //fetcha alla med promise all, så får jag alla vehicles+spaceships tillbaka
         //loopa igenom alla och kolla vilket objekt som har högst cost_in_credits
@@ -118,50 +121,53 @@ class Character {
 
 
 export async function createCharacter(id1, id2) {
+    try {
+        let person1 = await fetchCharacter(id1)
+        let person2 = await fetchCharacter(id2)
 
-    let person1 = await fetchCharacter(id1)
-    let person2 = await fetchCharacter(id2)
+        let character1 = new Character(
+            id1,
+            person1.name,
+            person1.height,
+            person1.mass,
+            person1.hair_color,
+            person1.skin_color,
+            person1.eye_color,
+            person1.birth_year,
+            person1.gender,
+            person1.homeworld,
+            person1.films,
+            person1.films.length,
+            person1.vehicles,
+            person1.starships,
+        );
 
-    let character1 = new Character(
-        id1,
-        person1.name,
-        person1.height,
-        person1.mass,
-        person1.hair_color,
-        person1.skin_color,
-        person1.eye_color,
-        person1.birth_year,
-        person1.gender,
-        person1.homeworld,
-        person1.films,
-        person1.films.length,
-        person1.vehicles,
-        person1.starships,
-    );
+        let character2 = new Character(
+            id2,
+            person2.name,
+            person2.height,
+            person2.mass,
+            person2.hair_color,
+            person2.skin_color,
+            person2.eye_color,
+            person2.birth_year,
+            person2.gender,
+            person2.homeworld,
+            person2.films,
+            person2.films.length,
+            person2.vehicles,
+            person2.starships,
+        );
 
-    let character2 = new Character(
-        id2,
-        person2.name,
-        person2.height,
-        person2.mass,
-        person2.hair_color,
-        person2.skin_color,
-        person2.eye_color,
-        person2.birth_year,
-        person2.gender,
-        person2.homeworld,
-        person2.films,
-        person2.films.length,
-        person2.vehicles,
-        person2.starships,
-    );
+        // console.log(character1)
+        // console.log(character2)
 
-    // console.log(character1)
-    // console.log(character2)
-
-    compareCharacters(character1, character2)
-    // let characters = 
-    return [character1, character2]
+        compareCharacters(character1, character2)
+        // let characters = 
+        return [character1, character2]
+    } catch (error) {
+        console.log("Could not create characters", error)
+    }
 
 }
 
@@ -238,6 +244,7 @@ function compareCharacters(character1, character2) {
 
     let statBox = document.getElementById("stats");
     statBox.innerText = ""
+    statBox.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
 
     statBox.innerHTML += `<p>${heightStat}</p>`
     statBox.innerHTML += `<p>${weightStat}</p>`
@@ -245,9 +252,9 @@ function compareCharacters(character1, character2) {
 
 
     statBox.innerHTML += `<p> Their skincolor is ${skinStat}</p>`
-    statBox.innerHTML += `<p> Their haircolor is ${skinStat}</p>`
-    statBox.innerHTML += `<p> Their eyecolor is ${skinStat}</p>`
-    statBox.innerHTML += `<p> Their gender is ${skinStat}</p>`
+    statBox.innerHTML += `<p> Their haircolor is ${hairStat}</p>`
+    statBox.innerHTML += `<p> Their eyecolor is ${eyeStat}</p>`
+    statBox.innerHTML += `<p> Their gender is ${genderStat}</p>`
 
     // statBox.innerText += `Their skincolor is ${skinStat}`
 
@@ -255,35 +262,95 @@ function compareCharacters(character1, character2) {
     console.log(compareWeight(character1, character2))
     console.log(compareFilmAmount(character1, character2))
 
-    console.log("Their skincolor is ", compareString(character1.skinColor, character2.skinColor))
-    console.log("Their haircolor is ", compareString(character1.hairColor, character2.hairColor))
-    console.log("Their eyecolor is ", compareString(character1.eyeColor, character2.eyeColor))
-    console.log("Their gender is ", compareString(character1.gender, character2.gender))
+    let additionalInfo = document.createElement("button")
+    additionalInfo.innerText = "More Info"
+    statBox.append(additionalInfo)
+
+
+    //-----------------------Should the user want additional information--------------------
+
+
+    additionalInfo.addEventListener("click", async () => {
+
+        let addInfo1 = document.getElementById("additional-info1")
+        addInfo1.innerHTML = ""
+        addInfo1.style.display = "block"
+
+        let addInfo2 = document.getElementById("additional-info2")
+        addInfo2.innerHTML = ""
+        addInfo2.style.display = "block"
+
+        let firstMovie1 = await character1.getFirstMovie();
+        let firstMovie2 = await character2.getFirstMovie();
+
+        console.log(firstMovie1.title, firstMovie1.release_date, "First movie 1")
+
+        addInfo1.innerHTML += `<p> The first appearance of ${character1.name} was in the movie '${firstMovie1.title} in ${firstMovie1.release_date.slice(0, 4)}.</p>`
+
+        console.log(firstMovie2.title, firstMovie2.release_date, "First movie 2")
+
+        addInfo2.innerHTML += `<p> The first appearance of ${character2.name} was in the movie '${firstMovie2.title} in ${firstMovie2.release_date.slice(0, 4)}.</p>`
+
+        //Gjorde metoden getMatchingMovies() statisk då jag bara för sakens skull vill kunna kalla metoden genom att skriva Character istället för att använde en instans av klassen
+
+        let coStars = await Character.getMatchingMovies(character1, character2)
+        if (coStars) {
+            console.log(" They have both starred in", coStars)
+            statBox.innerHTML += `<p> They have both starred in ${coStars}</p>`
+        }
+        if (character1.homePlanet.name === character2.homePlanet.name) {
+            console.log(" They Are both from the planet", character1.homePlanet.name)
+            statBox.innerHTML += `<p> They Are both from the planet
+             ${character1.homePlanet.name}</p>`
+        }
+        let char1mostExpensive = await character1.mostExpensiveVessel()
+        let char2mostExpensive = await character2.mostExpensiveVessel()
+        console.log(char1mostExpensive)
+        console.log(char2mostExpensive);
+
+        addInfo1.innerHTML += `<p> ${char1mostExpensive} </p>`
+        addInfo2.innerHTML += `<p> ${char2mostExpensive} </p>`
+
+
+
+
+
+
+    })
+
+
+    //______________________________________________________________________________
+
+
+    // console.log("Their skincolor is ", compareString(character1.skinColor, character2.skinColor))
+    // console.log("Their haircolor is ", compareString(character1.hairColor, character2.hairColor))
+    // console.log("Their eyecolor is ", compareString(character1.eyeColor, character2.eyeColor))
+    // console.log("Their gender is ", compareString(character1.gender, character2.gender))
 }
 
 
 
-let logCharacter = async (nmr) => {
-    try {
-        let aCharacter = await fetchCharacter(nmr);
-        console.log(aCharacter)
-    } catch (error) {
-        console.log("error: ", error)
-    }
-}
+// let logCharacter = async (nmr) => {
+//     try {
+//         let aCharacter = await fetchCharacter(nmr);
+//         console.log(aCharacter)
+//     } catch (error) {
+//         console.log("error: ", error)
+//     }
+// }
 
-async function CompareMovies(object1, object2) {
+// async function CompareMovies(object1, object2) {
 
-}
-async function getFirstMovie(character) {
-    const response = await fetch(this.films[0]);
-    const data = await response.json();
-    return data;
-}
+// }
+// async function getFirstMovie(character) {
+//     const response = await fetch(this.films[0]);
+//     const data = await response.json();
+//     return data;
+// }
 
-// 'den här kommer ta films[0] som argument till fetch
-// sedan kommer den ta responsen (first movie), skriva ut den och skriva ut
-// "person" first appeared in "firstmovie.title  in the year firstMovie.release_date " '
+// // 'den här kommer ta films[0] som argument till fetch
+// // sedan kommer den ta responsen (first movie), skriva ut den och skriva ut
+// // "person" first appeared in "firstmovie.title  in the year firstMovie.release_date " '
 
 
 
