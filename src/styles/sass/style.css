@@ -35,7 +35,7 @@
 main {
   text-align: center;
   /* background-image: url("/src/assets/images/background1.gif"); */
-  background: linear-gradient(to top, rgba(27, 19, 41, 0.7294117647), rgba(8, 6, 10, 0.5098039216)), url("../../assets/images/background1.gif");
+  background: linear-gradient(to top, rgba(27, 19, 41, 0.355), rgba(8, 6, 10, 0.322)), url("../../assets/images/background1.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 30%;
