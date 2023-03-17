@@ -1,6 +1,6 @@
 @font-face {
   font-family: "StarWars";
-  src: url("../..//assets/fonts/Starjhol.ttf") format("truetype");
+  src: url("../../assets/fonts/Starjhol.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -31,7 +31,7 @@
 
 main {
   text-align: center;
-  background: linear-gradient(to top, rgba(27, 19, 41, 0.7294117647), rgba(8, 6, 10, 0.5098039216)), url("../../assets/images/background1.gif");
+  background: linear-gradient(to top, rgba(27, 19, 41, 0.4117647059), rgba(8, 6, 10, 0.4156862745)), url("../../assets/images/background1.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center 30%;
@@ -86,12 +86,24 @@ body {
   border-radius: 50px;
   align-self: center;
   min-height: 50%;
+  padding: 1rem;
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
 }
 #stats p {
   font-size: 20px;
   color: aliceblue;
+}
+
+#more-text-btn {
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 12px;
+  border-radius: 2rem;
+  border-style: inset;
+  box-shadow: 1px 5px;
+  background-color: rgba(0, 0, 0, 0.668);
+  color: yellow;
 }
 
 .profile-picture {
@@ -128,9 +140,6 @@ body {
   }
 }
 @media screen and (max-width: 600px) {
-  body {
-    background-color: olive;
-  }
   #loading-video {
     position: fixed;
     bottom: 0;
@@ -151,7 +160,7 @@ body {
   flex-direction: column;
   max-width: 358px;
   width: 100%;
-  background-color: rgba(6, 2, 2, 0.504);
+  background-color: rgba(3, 0, 0, 0.504);
   border: 4px inset rgba(255, 255, 255, 0.475);
   border-radius: 10px;
   overflow: hidden;

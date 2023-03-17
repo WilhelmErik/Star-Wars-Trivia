@@ -62,7 +62,7 @@ class Character {
 
         if (vesselData.length === 0) {
             console.log('This character has no vehicles or starships.');
-            return 'This character has no vehicles or starships.'
+            return 'This character has neither vehicles nor starships.'
         }
 
 
@@ -222,11 +222,7 @@ export function compareFilmAmount(prsn1, prsn2) {
     }
 }
 
-
-
 export function compareString(prsn1stat, prsn2stat) {
-    // console.log(prsn1stat)
-    // console.log(prsn2stat)
     return (prsn1stat === prsn2stat) ? "the same" : "different";
 }
 
@@ -263,6 +259,7 @@ function compareCharacters(character1, character2) {
     console.log(compareFilmAmount(character1, character2))
 
     let additionalInfo = document.createElement("button")
+    additionalInfo.id = "more-text-btn";
     additionalInfo.innerText = "More Info"
     statBox.append(additionalInfo)
 
