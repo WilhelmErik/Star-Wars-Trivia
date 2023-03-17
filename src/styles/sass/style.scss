@@ -5,12 +5,31 @@
     font-style: normal;
 }
 
+
+
 $cardColor: rgba(3, 0, 0, 0.504);
 
+header {
+    background-color: black;
+    height: 10vh;
+    margin: 0;
+    padding: 0;
+}
+
+#background-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 
 
 
 .people {
+    min-height: 75vh;
 
     .person {
         display: flex;
@@ -62,20 +81,28 @@ $cardColor: rgba(3, 0, 0, 0.504);
 }
 
 main {
-    text-align: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
 
-    background: linear-gradient(to top, #1b132969, #08060a6a), url("../../assets/images/background1.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 30%;
+    // ----------
+    margin-top: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to top, #00000081, #030303);
+    height: 90vh;
+
 }
 
 
 h1 {
+    text-align: center;
     font-family: 'StarWars', sans-serif;
     font-weight: 900;
     font-size: 42px;
     color: rgb(186, 178, 30);
+    margin: 0;
 }
 
 select {
@@ -84,20 +111,29 @@ select {
     // font-family: StarWars;
     color: aliceblue;
     background-color: black;
+
 }
 
 body {
-    background-color: rgb(6, 5, 5);
-    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+
 }
 
 #loading-check {
+    border-radius: 40px;
     display: flex;
     font-size: 24px;
     color: aliceblue;
-    background-color: rgb(12, 10, 10);
+    background-color: rgba(12, 10, 10, 0.662);
     justify-content: center;
     align-items: center;
+
+    margin: auto;
+    // margin-top: 5vh;
+
+
+
 
     input.loading-check {
         height: 20px;
@@ -127,7 +163,9 @@ body {
     min-height: 50%;
     padding: 1rem;
     backdrop-filter: blur(6px);
-    // background-color: rgba(12, 10, 7, 0);
+    visibility: hidden;
+    background-color: $cardColor;
+    border: 4px groove rgba(255, 255, 255, 0.475);
 
     p {
         font-size: 20px;
@@ -191,8 +229,13 @@ body {
         grid-template-rows: 1fr;
         grid-template-columns: 1fr; // background-color: rgb(10, 10, 10);
         color: aliceblue;
+
     }
 
+    main {
+        overflow-y: auto;
+
+    }
 }
 
 
@@ -248,7 +291,7 @@ body {
     max-width: 358px;
     width: 100%;
     background-color: $cardColor;
-    border: 4px inset rgba(255, 255, 255, 0.475);
+    border: 4px groove rgba(255, 255, 255, 0.475);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

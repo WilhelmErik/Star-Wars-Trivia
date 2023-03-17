@@ -240,7 +240,7 @@ function compareCharacters(character1, character2) {
 
     let statBox = document.getElementById("stats");
     statBox.innerText = ""
-    statBox.style.backgroundColor = "rgba(0, 0, 0, 0.5)"
+    statBox.style.visibility = "visible"
 
     statBox.innerHTML += `<p>${heightStat}</p>`
     statBox.innerHTML += `<p>${weightStat}</p>`

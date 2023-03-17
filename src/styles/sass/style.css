@@ -4,7 +4,26 @@
   font-weight: normal;
   font-style: normal;
 }
+header {
+  background-color: black;
+  height: 10vh;
+  margin: 0;
+  padding: 0;
+}
+
+#background-video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .people {
+  min-height: 75vh;
   display: grid;
   grid-template-rows: minmax(300px, auto);
   grid-template-columns: minmax(20%, 50%) minmax(10%, 30%) minmax(20%, 50%);
@@ -30,18 +49,21 @@
 }
 
 main {
+  margin-top: 0;
   text-align: center;
-  background: linear-gradient(to top, rgba(27, 19, 41, 0.4117647059), rgba(8, 6, 10, 0.4156862745)), url("../../assets/images/background1.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center 30%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5058823529), #030303);
+  height: 90vh;
 }
 
 h1 {
+  text-align: center;
   font-family: "StarWars", sans-serif;
   font-weight: 900;
   font-size: 42px;
   color: rgb(186, 178, 30);
+  margin: 0;
 }
 
 select {
@@ -52,17 +74,19 @@ select {
 }
 
 body {
-  background-color: rgb(6, 5, 5);
-  height: 100vh;
+  margin: 0px;
+  padding: 0px;
 }
 
 #loading-check {
+  border-radius: 40px;
   display: flex;
   font-size: 24px;
   color: aliceblue;
-  background-color: rgb(12, 10, 10);
+  background-color: rgba(12, 10, 10, 0.662);
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 #loading-check input.loading-check {
   height: 20px;
@@ -89,6 +113,9 @@ body {
   padding: 1rem;
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
+  visibility: hidden;
+  background-color: rgba(3, 0, 0, 0.504);
+  border: 4px groove rgba(255, 255, 255, 0.475);
 }
 #stats p {
   font-size: 20px;
@@ -138,6 +165,9 @@ body {
     grid-template-columns: 1fr;
     color: aliceblue;
   }
+  main {
+    overflow-y: auto;
+  }
 }
 @media screen and (max-width: 600px) {
   #loading-video {
@@ -161,7 +191,7 @@ body {
   max-width: 358px;
   width: 100%;
   background-color: rgba(3, 0, 0, 0.504);
-  border: 4px inset rgba(255, 255, 255, 0.475);
+  border: 4px groove rgba(255, 255, 255, 0.475);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
