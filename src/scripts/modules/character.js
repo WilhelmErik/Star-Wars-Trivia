@@ -1,4 +1,4 @@
-import { fetchCharacter } from "./modules/api-fetch.mjs";
+import { fetchCharacter } from "./api-fetch.mjs";
 
 
 // fetchCharacter()

@@ -4,11 +4,37 @@
   font-weight: normal;
   font-style: normal;
 }
-header {
-  background-color: black;
-  height: 10vh;
+@font-face {
+  font-family: "Grotesk";
+  src: url("../../assets/fonts/Typo Grotesk Demo.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.header {
+  background-color: rgba(0, 0, 0, 0.026);
+  height: 15vh;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  margin-top: -20px;
+  margin-bottom: -35px;
+  text-align: center;
+  font-family: "StarWars", sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  color: #ffe919;
+}
+
+h2 {
+  font-family: "StarWars", sans-serif;
+  margin-top: 20px;
+  color: #ffe919;
+  margin-left: 15px;
+  font-size: 48px;
 }
 
 #background-video {
@@ -45,32 +71,29 @@ header {
   box-shadow: 1px 5px;
   font-family: "StarWars";
   background-color: rgba(0, 0, 0, 0.052);
-  color: yellow;
+  color: #ffe919;
 }
 
 main {
   margin-top: 0;
   text-align: center;
   position: relative;
-  overflow: hidden;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5058823529), #030303);
-  height: 90vh;
-}
-
-h1 {
-  text-align: center;
-  font-family: "StarWars", sans-serif;
-  font-weight: 900;
-  font-size: 42px;
-  color: rgb(186, 178, 30);
-  margin: 0;
 }
 
 select {
-  font-size: 18px;
+  max-height: 50px;
+  border-radius: 12px;
+  font-size: 24px;
   padding: 5px 10px;
   color: aliceblue;
   background-color: black;
+  color: #ffe919;
+  overflow-y: scroll;
+}
+
+.select-test {
+  margin: auto;
 }
 
 body {
@@ -79,18 +102,17 @@ body {
 }
 
 #loading-check {
-  border-radius: 40px;
   display: flex;
   font-size: 24px;
   color: aliceblue;
-  background-color: rgba(12, 10, 10, 0.662);
+  background-color: rgba(3, 0, 0, 0.504);
   justify-content: center;
   align-items: center;
   margin: auto;
 }
 #loading-check input.loading-check {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
 }
 
 #loading-video {
@@ -107,6 +129,7 @@ body {
 }
 
 #stats {
+  font-family: "Grotesk", sans-serif;
   border-radius: 50px;
   align-self: center;
   min-height: 50%;
@@ -125,7 +148,7 @@ body {
 #more-text-btn {
   margin: 1rem;
   padding: 1rem;
-  font-size: 12px;
+  font-size: 16px;
   border-radius: 2rem;
   border-style: inset;
   box-shadow: 1px 5px;
@@ -167,6 +190,9 @@ body {
   }
   main {
     overflow-y: auto;
+    background: linear-gradient(to top, rgba(27, 19, 41, 0.7294117647), rgba(8, 6, 10, 0.5098039216)), url("../../assets/images/background1.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 @media screen and (max-width: 600px) {
@@ -199,7 +225,6 @@ body {
   display: none;
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
-  margin-top: 10%;
 }
 
 .card-header {
@@ -234,6 +259,7 @@ body {
 }
 
 .card-info {
+  font-family: "Grotesk", sans-serif;
   font-size: 20px;
   display: flex;
   justify-content: space-between;

@@ -91,3 +91,5 @@ const characters = [
     { id: 83, name: 'Tion Medon' }
 
 ];
+
+export default characters;
