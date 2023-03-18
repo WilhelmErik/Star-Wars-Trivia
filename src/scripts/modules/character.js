@@ -4,7 +4,7 @@ import { fetchCharacter } from "./api-fetch.mjs";
 // fetchCharacter()
 
 
-//Empty comment to try and make git force merge
+
 
 
 
