@@ -1,52 +1,69 @@
 @font-face {
-    font-family: 'StarWars';
-    src: url("../..//assets/fonts/Starjhol.ttf") format('truetype');
+    font-family: "StarWars";
+    src: url("../../assets/fonts/Starjhol.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
-$cardColor: rgba(6, 2, 2, 0.504);
+@font-face {
+    font-family: "Grotesk";
+    src: url("../../assets/fonts/Typo Grotesk Demo.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
 
+.header {
+    background-color: rgba(0, 0, 0, 0.026);
+    height: 15vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
 
+h1 {
+    margin-top: -20px;
+    margin-bottom: -35px;
+    text-align: center;
+    font-family: "StarWars", sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    color: #ffe919;
+}
 
+h2 {
+    font-family: "StarWars", sans-serif;
+    margin-top: 20px;
+    color: #ffe919;
+    margin-left: 15px;
+    font-size: 48px;
+}
+
+#background-video {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 
 .people {
-
-    .person {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-
+    min-height: 75vh;
     display: grid;
     grid-template-rows: minmax(300px, auto);
-    grid-template-columns: minmax(20%, 50%)minmax(10%, 30%)minmax(20%, 50%);
-    // background-color: rgb(10, 10, 10);
+    grid-template-columns: minmax(20%, 50%) minmax(10%, 30%) minmax(20%, 50%);
     color: aliceblue;
-
     /* grid-column: 1fr, 1fr; */
+}
 
-
-
-    div {
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
-        // justify-content: center;
-
-
-        p {
-            // margin: 5px;
-            // text-align: center;
-            // padding: 0.2rem;
-            // color: rgb(249, 177, 84);
-            // // border: rgb(255, 89, 0) 2px inset;
-            // background-color: rgba(0, 0, 0, 0.5);
-        }
-    }
-
+.people .person {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #clickie {
@@ -56,54 +73,49 @@ $cardColor: rgba(6, 2, 2, 0.504);
     border-radius: 2rem;
     border-style: inset;
     box-shadow: 1px 5px;
-    font-family: 'StarWars';
+    font-family: "StarWars";
     background-color: rgba(0, 0, 0, 0.052);
-    color: yellow;
+    color: #ffe919;
 }
 
 main {
+    margin-top: 0;
     text-align: center;
-
-    background: linear-gradient(to top, #1b1329ba, #08060a82), url("../../assets/images/background1.gif");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 30%;
-}
-
-
-h1 {
-    font-family: 'StarWars', sans-serif;
-    font-weight: 900;
-    font-size: 42px;
-    color: rgb(186, 178, 30);
+    position: relative;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5058823529), #030303);
 }
 
 select {
     font-size: 18px;
     padding: 5px 10px;
-    // font-family: StarWars;
     color: aliceblue;
     background-color: black;
+    color: #ffe919;
+    overflow-y: scroll;
+}
+
+.select-test {
+    margin: auto;
 }
 
 body {
-    background-color: rgb(6, 5, 5);
-    height: 100vh;
+    margin: 0px;
+    padding: 0px;
 }
 
 #loading-check {
     display: flex;
     font-size: 24px;
     color: aliceblue;
-    background-color: rgb(12, 10, 10);
+    background-color: rgba(3, 0, 0, 0.504);
     justify-content: center;
     align-items: center;
+    margin: auto;
+}
 
-    input.loading-check {
-        height: 20px;
-        width: 20px;
-
-    }
+#loading-check input.loading-check {
+    height: 30px;
+    width: 30px;
 }
 
 #loading-video {
@@ -113,25 +125,28 @@ body {
     width: 100%;
     height: 100%;
     z-index: 9999;
+    -o-object-fit: cover;
     object-fit: cover;
     background-color: black;
     visibility: hidden;
-
-
-    // display: none;
 }
 
 #stats {
+    font-family: "Grotesk", sans-serif;
     border-radius: 50px;
     align-self: center;
     min-height: 50%;
+    padding: 1rem;
+    -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
-    // background-color: rgba(12, 10, 7, 0);
+    visibility: hidden;
+    background-color: rgba(3, 0, 0, 0.504);
+    border: 4px groove rgba(255, 255, 255, 0.475);
+}
 
-    p {
-        font-size: 20px;
-        color: aliceblue;
-    }
+#stats p {
+    font-size: 20px;
+    color: aliceblue;
 }
 
 
@@ -145,54 +160,39 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    // background-image: url("./assets/img/characters/3.jpg"), url("./assets/img/big-placeholder.jpg");
     background: center;
     background-position: center 20%;
     background-size: cover;
-
-
-    img {
-        border-radius: 16px;
-        max-width: 360px;
-        // max-height: 244px;
-        max-height: 90%;
-        margin: auto;
-        max-width: 96%;
-        // max-height: 100%;
-
-        width: 100%;
-        object-fit: cover
-    }
-
 }
 
-
-
-
-
-
-
-
+.profile-picture img {
+    border-radius: 16px;
+    max-width: 360px;
+    max-height: 90%;
+    margin: auto;
+    max-width: 96%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
 
 @media screen and (max-width: 1024px) {
     .people {
         display: grid;
         grid-template-rows: 1fr;
-        grid-template-columns: 1fr; // background-color: rgb(10, 10, 10);
+        grid-template-columns: 1fr;
         color: aliceblue;
     }
 
+    main {
+        overflow-y: auto;
+        background: linear-gradient(to top, rgba(27, 19, 41, 0.7294117647), rgba(8, 6, 10, 0.5098039216)), url("../../assets/images/background1.gif");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 
-
-
-
-
 @media screen and (max-width: 600px) {
-    body {
-        background-color: olive;
-    }
-
     #loading-video {
         position: fixed;
         bottom: 0;
@@ -200,37 +200,13 @@ body {
         width: 100%;
         height: 100%;
         z-index: 9999;
+        -o-object-fit: cover;
         object-fit: cover;
         background-color: black;
         visibility: hidden;
         src: url("..../");
-
-
-        // display: none;
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-// body {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 100vh;
-//     background-color: #ec8e8e;
-//     margin: 0;
-//     font-family: Arial, sans-serif;
-//     background-color: rgb(103, 55, 55);
-// }
 
 .card {
     color: #f0f0f0;
@@ -238,15 +214,15 @@ body {
     flex-direction: column;
     max-width: 358px;
     width: 100%;
-    background-color: $cardColor;
-    border: 4px inset rgba(255, 255, 255, 0.475);
+    background-color: rgba(3, 0, 0, 0.504);
+    border: 4px groove rgba(255, 255, 255, 0.475);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: auto;
     display: none;
-     backdrop-filter: blur(6px);
-    margin-top: 10%;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
 }
 
 .card-header {
@@ -261,9 +237,8 @@ body {
 .card-name {
     font-weight: bold;
     font-size: 1.4rem;
-    color: #ebe9dbe6;
+    color: rgba(235, 233, 219, 0.9019607843);
 }
-
 
 .card-img {
     margin: auto;
@@ -272,9 +247,6 @@ body {
     max-width: 358px;
     border-radius: 16px;
     border: solid 2px black;
-
-    // background-image: url("https://www.slashfilm.com/img/gallery/heres-what-the-new-luke-skywalker-looks-like-under-his-digital-mask/intro-1644193087.jpg");
-
     background: center;
     background-position: center 20%;
     background-size: cover;
@@ -285,6 +257,7 @@ body {
 }
 
 .card-info {
+    font-family: "Grotesk", sans-serif;
     font-size: 20px;
     display: flex;
     justify-content: space-between;
@@ -303,7 +276,6 @@ body {
     text-align: justify;
     display: none;
     border-top: gray inset 2px;
-   
 }
 
 .circleID {
@@ -311,11 +283,11 @@ body {
     border-radius: 16px;
     border: rgba(255, 255, 0, 0.7) 2px solid;
     padding: 5px;
-
 }
 
 .card-id {
     padding-top: 10px;
     padding: 5px;
-
 }
+
+/*# sourceMappingURL=style.css.map */
