@@ -1,6 +1,7 @@
 import { fetchCharacter } from "./modules/api-fetch.mjs";
-import { createCharacter } from "./character.js";
-import { compareNumeric } from "./character.js";
+// import { Character } from "./modules/character.js";
+import { createCharacter } from "./modules/character.js";
+// import { compareNumeric } from "./character.js";
 
 
 
@@ -22,7 +23,7 @@ clickButton.addEventListener("click", async function () {
         video.style.visibility = "visible";
         video.muted = false;
     }
-
+    //Kommentar
     let leftSelect = document.querySelector("select[name='select1']").value
     console.log(leftSelect, "👈")
     let rightSelect = document.querySelector("select[name='select2']").value
@@ -65,6 +66,7 @@ async function fetchAndPrint(obj1, obj2) {
         addInfo1.style.display = "none"
 
         let addInfo2 = document.getElementById("additional-info2")
+
         addInfo2.innerHTML = ""
         addInfo2.style.display = "none"
         //--- 
