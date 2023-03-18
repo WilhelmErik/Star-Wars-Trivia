@@ -1,11 +1,55 @@
 @font-face {
   font-family: "StarWars";
-  src: url("../..//assets/fonts/Starjhol.ttf") format("truetype");
+  src: url("../../assets/fonts/Starjhol.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Grotesk";
+  src: url("../../assets/fonts/Typo Grotesk Demo.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+.header {
+  background-color: rgba(0, 0, 0, 0.026);
+  height: 15vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  margin-top: -20px;
+  margin-bottom: -35px;
+  text-align: center;
+  font-family: "StarWars", sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  color: #ffe919;
+}
+
+h2 {
+  font-family: "StarWars", sans-serif;
+  margin-top: 20px;
+  color: #ffe919;
+  margin-left: 15px;
+  font-size: 48px;
+}
+
+#background-video {
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 
 .people {
+  min-height: 75vh;
   display: grid;
   grid-template-rows: minmax(300px, auto);
   grid-template-columns: minmax(20%, 50%) minmax(10%, 30%) minmax(20%, 50%);
@@ -29,48 +73,49 @@
   box-shadow: 1px 5px;
   font-family: "StarWars";
   background-color: rgba(0, 0, 0, 0.052);
-  color: yellow;
+  color: #ffe919;
 }
 
 main {
+  margin-top: 0;
   text-align: center;
-  background: linear-gradient(to top, rgba(27, 19, 41, 0.7294117647), rgba(8, 6, 10, 0.5098039216)), url("../../assets/images/background1.gif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center 30%;
-}
-
-h1 {
-  font-family: "StarWars", sans-serif;
-  font-weight: 900;
-  font-size: 42px;
-  color: rgb(186, 178, 30);
+  position: relative;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5058823529), #030303);
 }
 
 select {
-  font-size: 18px;
+  max-height: 50px;
+  border-radius: 12px;
+  font-size: 24px;
   padding: 5px 10px;
   color: aliceblue;
   background-color: black;
+  color: #ffe919;
+  overflow-y: scroll;
+}
+
+.select-test {
+  margin: auto;
 }
 
 body {
-  background-color: rgb(6, 5, 5);
-  height: 100vh;
+  margin: 0px;
+  padding: 0px;
 }
 
 #loading-check {
   display: flex;
   font-size: 24px;
   color: aliceblue;
-  background-color: rgb(12, 10, 10);
+  background-color: rgba(3, 0, 0, 0.504);
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 
 #loading-check input.loading-check {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
 }
 
 #loading-video {
@@ -87,16 +132,32 @@ body {
 }
 
 #stats {
+  font-family: "Grotesk", sans-serif;
   border-radius: 50px;
   align-self: center;
   min-height: 50%;
+  padding: 1rem;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
+  visibility: hidden;
+  background-color: rgba(3, 0, 0, 0.504);
+  border: 4px groove rgba(255, 255, 255, 0.475);
 }
 
 #stats p {
   font-size: 20px;
   color: aliceblue;
+}
+
+#more-text-btn {
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 16px;
+  border-radius: 2rem;
+  border-style: inset;
+  box-shadow: 1px 5px;
+  background-color: rgba(0, 0, 0, 0.668);
+  color: yellow;
 }
 
 .profile-picture {
@@ -132,13 +193,14 @@ body {
     grid-template-columns: 1fr;
     color: aliceblue;
   }
-}
-
-@media screen and (max-width: 600px) {
-  body {
-    background-color: olive;
+  main {
+    overflow-y: auto;
+    background: linear-gradient(to top, rgba(27, 19, 41, 0.7294117647), rgba(8, 6, 10, 0.5098039216)), url("../../assets/images/background1.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-
+}
+@media screen and (max-width: 600px) {
   #loading-video {
     position: fixed;
     bottom: 0;
@@ -153,15 +215,14 @@ body {
     src: url("..../");
   }
 }
-
 .card {
   color: #f0f0f0;
   display: flex;
   flex-direction: column;
   max-width: 358px;
   width: 100%;
-  background-color: rgba(6, 2, 2, 0.504);
-  border: 4px inset rgba(255, 255, 255, 0.475);
+  background-color: rgba(3, 0, 0, 0.504);
+  border: 4px groove rgba(255, 255, 255, 0.475);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -169,7 +230,6 @@ body {
   display: none;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  margin-top: 10%;
 }
 
 .card-header {
@@ -204,6 +264,7 @@ body {
 }
 
 .card-info {
+  font-family: "Grotesk", sans-serif;
   font-size: 20px;
   display: flex;
   justify-content: space-between;
