@@ -2,8 +2,7 @@ import { fetchCharacter } from "./modules/api-fetch.mjs";
 // import { Character } from "./modules/character.js";
 import { createCharacter } from "./modules/character.js";
 // import { compareNumeric } from "./character.js";
-
-
+//cment
 
 let video = document.getElementById("loading-video");
 const mobileSrc = './src/assets/videos/Loading-Screen-mobile.mp4';
