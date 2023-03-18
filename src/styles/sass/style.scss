@@ -86,7 +86,9 @@ main {
 }
 
 select {
-    font-size: 18px;
+    max-height: 50px;
+    border-radius: 12px;
+    font-size: 24px;
     padding: 5px 10px;
     color: aliceblue;
     background-color: black;
@@ -149,6 +151,16 @@ body {
     color: aliceblue;
 }
 
+#more-text-btn {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 16px;
+    border-radius: 2rem;
+    border-style: inset;
+    box-shadow: 1px 5px;
+    background-color: rgba(0, 0, 0, 0.668);
+    color: yellow;
+}
 
 .profile-picture {
     margin: auto;
