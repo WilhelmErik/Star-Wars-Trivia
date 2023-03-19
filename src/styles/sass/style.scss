@@ -35,8 +35,18 @@ h2 {
     font-family: "StarWars", sans-serif;
     margin-top: 20px;
     color: #ffe919;
-    margin-left: 15px;
+    margin-left: 35px;
     font-size: 48px;
+}
+
+.logos {
+    img {
+        height: 40px;
+    }
+
+    margin-top: 10px;
+    position: relative;
+
 }
 
 #background-video {
@@ -217,6 +227,14 @@ body {
         background-color: black;
         visibility: hidden;
         src: url("..../");
+    }
+
+    .header {
+        display: block;
+    }
+
+    h2 {
+        margin: auto;
     }
 }
 

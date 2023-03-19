@@ -8,9 +8,6 @@ let video = document.getElementById("loading-video");
 const mobileSrc = './src/assets/videos/Loading-Screen-mobile.mp4';
 const desktopSrc = './src/assets/videos/Loading-Screens.mp4';
 
-
-let charwindows1 = document.getElementById("person1-info")
-let charwindows2 = document.getElementById("person2-info")
 let clickButton = document.getElementById("clickie")
 
 clickButton.addEventListener("click", async function () {
@@ -18,7 +15,6 @@ clickButton.addEventListener("click", async function () {
     let loadingSc = document.getElementById("loadingScreen").checked
     if (loadingSc) {
         setVideoSrc()
-        // document.getElementById("loading-video").style.visibility = "visible";
         video.style.visibility = "visible";
         video.muted = false;
     }
@@ -55,11 +51,14 @@ async function fetchAndPrint(obj1, obj2) {
         let pfp1 = document.getElementById("card-img1")
         let pfp2 = document.getElementById("card-img2")
 
+        // --------Setting images for the cards---------
+
         pfp1.style.backgroundImage = 'url("./src/assets/images/people/image' + obj1.id + '.jpg") , url("./src/assets/images/people/errorDroid.jpg") '
 
         pfp2.style.backgroundImage = 'url("./src/assets/images/people/image' + obj2.id + '.jpg"), url("./src/assets/images/people/error.jpg")'
+        //___________________________________________________
 
-        //--- Im dumb
+
         let addInfo1 = document.getElementById("additional-info1")
         addInfo1.innerHTML = ""
         addInfo1.style.display = "none"
@@ -68,30 +67,15 @@ async function fetchAndPrint(obj1, obj2) {
         addInfo2.innerHTML = ""
         addInfo2.style.display = "none"
         //--- 
-
-        // charwindows1.innerHTML = ""
-        // charwindows2.innerHTML = ""
-
-        let firstMovie1 = await obj1.getFirstMovie()
+        console.table(obj1,obj2)
 
         await obj1.setHomePlanet()
-        console.log(obj1.name + "s homeplanet is ", obj1.homePlanet.name)
         await obj2.setHomePlanet()
-        console.log(obj2.name + "s homeplanet is ", obj2.homePlanet.name)
 
         let samePlanet = obj1.compareHomePlanet(obj2.homePlanet)
-        console.log("They come from the same planet?:", samePlanet)
-
-        console.log(obj1.id, "testar id")
-        // console.log(character1Img)
-        console.log(obj2.id, "testar id")
-
-        obj1.mostExpensiveVessel()
-
 
         //---------------------------filling the cards---------------------------
-
-
+        //-----
         document.getElementById("card-id1").textContent = obj1.id;
         document.getElementById("card-name1").textContent = obj1.name;
 
@@ -103,7 +87,9 @@ async function fetchAndPrint(obj1, obj2) {
         document.getElementById("hair-color-value1").textContent = obj1.hairColor;
         document.getElementById("skin-color-value1").textContent = obj1.skinColor;
         document.getElementById("movie-amount-value1").textContent = obj1.filmAmount;
+        //_______
 
+        //--------
         document.getElementById("card-id2").textContent = obj2.id;
         document.getElementById("card-name2").textContent = obj2.name;
 
@@ -115,38 +101,11 @@ async function fetchAndPrint(obj1, obj2) {
         document.getElementById("hair-color-value2").textContent = obj2.hairColor;
         document.getElementById("skin-color-value2").textContent = obj2.skinColor;
         document.getElementById("movie-amount-value2").textContent = obj2.filmAmount;
-
-
-
-
-        //----------------------------_______---------------------------
-
-        //---------------------------Old code ,key n values---------------------------
-
-
-        // for (const property in obj1) {
-        //     let pItem = document.createElement("p")
-        //     pItem.innerText = `${property} :  ${obj1[property]}`
-        //     charwindows1.appendChild(pItem);
-        //     console.log(property, ":", obj1[property])
-
-        // }
-        // for (const property in obj2) {
-        //     let pItem = document.createElement("p")
-        //     pItem.innerText = `${property} :  ${obj2[property]}`
-        //     charwindows2.append(pItem)
-        //     console.log(property, ":", obj2[property])
-        // }
-
-
-        //----------------------------_______---------------------------
-
-
+        //_________
 
     } catch (error) { console.log("error:", error, "Kunde inte hitta") }
 
 }
-
 
 
 function setVideoSrc() {
@@ -155,4 +114,8 @@ function setVideoSrc() {
     } else {
         video.src = desktopSrc;
     }
+}
+
+function fillCards(obj1, obj2) {
+
 }

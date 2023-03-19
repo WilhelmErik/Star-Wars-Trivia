@@ -1,13 +1,6 @@
 import { fetchCharacter } from "./api-fetch.mjs";
 
 
-// fetchCharacter()
-
-
-
-
-
-
 class Character {
     constructor(id, name, height, mass, hairColor, skinColor, eyeColor, birthYear, gender, homeWorld, films, filmAmount, vehicles, starships) {
         Object.assign(this, { id, name, height, mass, hairColor, skinColor, eyeColor, birthYear, gender, homeWorld, films, filmAmount, vehicles, starships })
@@ -95,10 +88,6 @@ class Character {
                 ? ', but its cost is unknown'
                 : " which cost is " + mostExpensive.cost_in_credits + " credits");
 
-
-
-
-        // console.log("Their most expensive vehicle is the", mostExpensive.name, "which cost is", mostExpensive.cost_in_credits, "credits")
         console.log(vesselInformation)
         console.log(mostExpensive, "Is the most expensive vessel")
 
@@ -158,9 +147,6 @@ export async function createCharacter(id1, id2) {
             person2.vehicles,
             person2.starships,
         );
-
-        // console.log(character1)
-        // console.log(character2)
 
         compareCharacters(character1, character2)
         // let characters = 
@@ -308,52 +294,8 @@ function compareCharacters(character1, character2) {
         addInfo1.innerHTML += `<p> ${char1mostExpensive} </p>`
         addInfo2.innerHTML += `<p> ${char2mostExpensive} </p>`
 
-
-
-
-
-
     })
-
-
-    //______________________________________________________________________________
-
-
-    // console.log("Their skincolor is ", compareString(character1.skinColor, character2.skinColor))
-    // console.log("Their haircolor is ", compareString(character1.hairColor, character2.hairColor))
-    // console.log("Their eyecolor is ", compareString(character1.eyeColor, character2.eyeColor))
-    // console.log("Their gender is ", compareString(character1.gender, character2.gender))
 }
-
-
-
-// let logCharacter = async (nmr) => {
-//     try {
-//         let aCharacter = await fetchCharacter(nmr);
-//         console.log(aCharacter)
-//     } catch (error) {
-//         console.log("error: ", error)
-//     }
-// }
-
-// async function CompareMovies(object1, object2) {
-
-// }
-// async function getFirstMovie(character) {
-//     const response = await fetch(this.films[0]);
-//     const data = await response.json();
-//     return data;
-// }
-
-// // 'den här kommer ta films[0] som argument till fetch
-// // sedan kommer den ta responsen (first movie), skriva ut den och skriva ut
-// // "person" first appeared in "firstmovie.title  in the year firstMovie.release_date " '
-
-
-
-
-
-
 
 
 
