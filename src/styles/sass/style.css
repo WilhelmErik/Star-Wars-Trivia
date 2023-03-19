@@ -204,6 +204,7 @@ body {
   main {
     overflow-y: auto;
     background: linear-gradient(to top, rgba(27, 19, 41, 0.7294117647), rgba(8, 6, 10, 0.5098039216)), url("../../assets/images/background1.gif");
+    background-position: center 20%;
     background-repeat: no-repeat;
     background-size: cover;
   }
