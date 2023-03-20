@@ -9,6 +9,7 @@ const mobileSrc = './src/assets/videos/Loading-Screen-mobile.mp4';
 const desktopSrc = './src/assets/videos/Loading-Screens.mp4';
 
 let clickButton = document.getElementById("clickie")
+
 setVideoSrc()
 clickButton.addEventListener("click", async function () {
     setVideoSrc()
@@ -19,9 +20,9 @@ clickButton.addEventListener("click", async function () {
         video.muted = false;
     }
 
-    let leftSelect = document.querySelector("select[name='select1']").value
+    let leftSelect = document.querySelector("#charSearchField1").dataset.id;
     console.log(leftSelect, "👈")
-    let rightSelect = document.querySelector("select[name='select2']").value
+    let rightSelect = document.querySelector("#charSearchField2").dataset.id;
     console.log("👉", rightSelect)
 
     try {
@@ -34,6 +35,7 @@ clickButton.addEventListener("click", async function () {
         }, 4000)
 
     } catch (error) {
+        alert("Well that aint right 😫")
         console.log("Well that aint right 😫:", error)
     }
 
@@ -123,3 +125,71 @@ function setVideoSrc() {
 function fillCards(obj1, obj2) {
 
 }
+
+//---- Working on search feature
+
+import characters from "./modules/characterList.js"
+
+
+const myDropdown1 = document.getElementById("selectable-options1");
+const charSearch1 = document.getElementById("charSearchField1")
+
+const myDropdown2 = document.getElementById("selectable-options2");
+const charSearch2 = document.getElementById("charSearchField2")
+
+searchFunction(myDropdown1, charSearch1)
+searchFunction(myDropdown2, charSearch2)
+
+function searchFunction(myDropdown, charSearch) {
+
+    myDropdown.hidden = true
+
+    characters.forEach(character => {
+        const option = document.createElement("div");
+        option.classList.add("select-option");
+        option.innerText = character.name
+        option.dataset.name = character.name;
+        option.dataset.id = character.id;
+        myDropdown.append(option)
+
+        option.addEventListener("click", () => {
+            charSearch.value = option.dataset.name;
+            charSearch.dataset.id = option.dataset.id;
+            console.log(charSearch.dataset.id)
+        })
+    })
+
+    charSearch.addEventListener("focus", () => {
+        myDropdown.hidden = false
+    })
+
+    charSearch.addEventListener("blur", () => {
+        setTimeout(() => {
+            myDropdown.hidden = true
+        }, 100)
+    })
+
+    charSearch.addEventListener("input", (e) => {
+        myDropdown.hidden = false
+        const searchValue = e.target.value.toLowerCase();
+
+        for (const option of myDropdown.children) {
+            const charName = option.dataset.name.toLowerCase();
+            option.hidden = !charName.includes(searchValue)
+        }
+        console.log(searchValue)
+    })
+
+}
+
+const myDropdown = document.getElementById("selectable-options");
+const charSearch = document.getElementById("charSearchField1")
+myDropdown.hidden = true
+
+
+
+
+
+
+
+console.log("test")
