@@ -312,7 +312,6 @@ body {
   padding: 5px;
 }
 
-
 .selectable-options {
   max-height: 200px;
   overflow: auto;
@@ -339,4 +338,6 @@ body {
 
 .select-option:hover {
   background-color: #2d2d2d;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

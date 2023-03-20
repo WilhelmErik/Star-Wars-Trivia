@@ -181,15 +181,3 @@ function searchFunction(myDropdown, charSearch) {
     })
 
 }
-
-const myDropdown = document.getElementById("selectable-options");
-const charSearch = document.getElementById("charSearchField1")
-myDropdown.hidden = true
-
-
-
-
-
-
-
-console.log("test")
