@@ -71,7 +71,7 @@ async function fetchAndPrint(obj1, obj2) {
         //________________________________
 
         //--- 
-        console.table(obj1, obj2)
+
 
         await obj1.setHomePlanet()
         await obj2.setHomePlanet()

@@ -203,10 +203,15 @@ export function compareHeight(prsn1, prsn2) {
 }
 
 export function compareWeight(prsn1, prsn2) {
-    if (+prsn1.mass > +prsn2.mass) {
-        return prsn1.name + " weighs " + (+prsn1.mass - +prsn2.mass) + "kg more than " + prsn2.name
-    } else if (+prsn2.mass > +prsn1.mass) {
-        return prsn2.name + " weighs " + (+prsn2.mass - +prsn1.mass) + "kg more than " + prsn1.name
+    const mass1 = Math.round(prsn1.mass * 10) / 10;
+    const mass2 = Math.round(prsn2.mass * 10) / 10;
+    console.log(mass1, mass2, "Vikt Test")
+    if (mass1 > mass2) {
+        const weightDiff = Math.round(mass1 - mass2).toFixed(1)
+        return prsn1.name + " weighs " + weightDiff + "kg more than WTF " + prsn2.name
+    } else if (mass2 > mass1) {
+        const weightDiff = Math.round(mass2 - mass1).toFixed(1)
+        return prsn2.name + " weighs " + weightDiff + "kg more than WTF" + prsn1.name
     } else {
         return "They have the same mass"
     }
@@ -258,9 +263,10 @@ function compareCharacters(character1, character2) {
 
     // statBox.innerText += `Their skincolor is ${skinStat}`
 
-    console.log(compareHeight(character1, character2))
-    console.log(compareWeight(character1, character2))
-    console.log(compareFilmAmount(character1, character2))
+    // console.log(compareHeight(character1, character2))
+    console.log(compareWeight(character1, character2), "ITS BROKEN")
+    console.log("ITS BROKEN")
+    // console.log(compareFilmAmount(character1, character2))
 
     let additionalInfo = document.createElement("button")
     additionalInfo.innerText = "More Info"

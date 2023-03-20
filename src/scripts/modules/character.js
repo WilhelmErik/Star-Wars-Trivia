@@ -189,10 +189,15 @@ export function compareHeight(prsn1, prsn2) {
 }
 
 export function compareWeight(prsn1, prsn2) {
-    if (+prsn1.mass > +prsn2.mass) {
-        return prsn1.name + " weighs " + (+prsn1.mass - +prsn2.mass) + "kg more than " + prsn2.name
-    } else if (+prsn2.mass > +prsn1.mass) {
-        return prsn2.name + " weighs " + (+prsn2.mass - +prsn1.mass) + "kg more than " + prsn1.name
+    const mass1 = +prsn1.mass
+    const mass2 = +prsn2.mass;
+    console.log(mass1, mass2, "Vikt Test")
+    if (mass1 > mass2) {
+        const weightDiff1 = (mass1 - mass2).toFixed(1)
+        return prsn1.name + " weighs " + weightDiff1 + "kg more than " + prsn2.name
+    } else if (mass2 > mass1) {
+        const weightDiff2 = (mass2 - mass1).toFixed(1)
+        return prsn2.name + " weighs " + weightDiff2 + "kg more than " + prsn1.name
     } else {
         return "They have the same mass"
     }

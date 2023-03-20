@@ -148,7 +148,7 @@ body {
 }
 
 #stats {
-    font-family: "Grotesk", sans-serif;
+    font-family: sans-serif;
     border-radius: 50px;
     align-self: center;
     min-height: 50%;
@@ -304,6 +304,11 @@ body {
 
 .info-label {
     font-weight: bold;
+}
+
+.info-value {
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .additional-info {
