@@ -67,7 +67,6 @@ h2 {
 
 .people .person {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
@@ -313,4 +312,31 @@ body {
   padding: 5px;
 }
 
-/*# sourceMappingURL=style.css.map */
+
+.selectable-options {
+  max-height: 200px;
+  overflow: auto;
+}
+
+.searchable-select-box input {
+  border: #ffe919 2px inset;
+  background-color: #030303;
+  color: #ffe919;
+  font-size: 24px;
+}
+.searchable-select-box ::-moz-placeholder {
+  color: rgba(222, 216, 154, 0.9411764706);
+}
+.searchable-select-box ::placeholder {
+  color: rgba(222, 216, 154, 0.9411764706);
+}
+
+.select-option {
+  background-color: #030303;
+  color: #ffe919;
+  font-size: 24px;
+}
+
+.select-option:hover {
+  background-color: #2d2d2d;
+}/*# sourceMappingURL=style.css.map */

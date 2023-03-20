@@ -12,6 +12,8 @@
     font-style: normal;
 }
 
+$SWYellow :#ffe919;
+
 .header {
     background-color: rgba(0, 0, 0, 0.026);
     height: 15vh;
@@ -22,6 +24,7 @@
 }
 
 h1 {
+
     margin-top: -20px;
     margin-bottom: -35px;
     text-align: center;
@@ -29,6 +32,7 @@ h1 {
     font-weight: 900;
     font-size: 60px;
     color: #ffe919;
+
 }
 
 h2 {
@@ -71,7 +75,7 @@ h2 {
 
 .people .person {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -324,3 +328,35 @@ body {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.selectable-options {
+    max-height: 200px;
+    overflow: auto;
+}
+
+.searchable-select-box {
+    input {
+        border: $SWYellow 2px inset;
+        background-color: #030303;
+        color: $SWYellow;
+        font-size: 24px;
+
+
+    }
+
+    ::placeholder {
+        color: #ded89af0;
+    }
+}
+
+
+
+.select-option {
+    background-color: #030303;
+    color: $SWYellow;
+    font-size: 24px;
+}
+
+.select-option:hover {
+    background-color: #2d2d2d;
+}
