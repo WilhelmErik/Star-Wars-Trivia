@@ -9,12 +9,12 @@ const mobileSrc = './src/assets/videos/Loading-Screen-mobile.mp4';
 const desktopSrc = './src/assets/videos/Loading-Screens.mp4';
 
 let clickButton = document.getElementById("clickie")
-
+setVideoSrc()
 clickButton.addEventListener("click", async function () {
-
+    setVideoSrc()
     let loadingSc = document.getElementById("loadingScreen").checked
     if (loadingSc) {
-        setVideoSrc()
+        // setVideoSrc()
         video.style.visibility = "visible";
         video.muted = false;
     }
@@ -58,7 +58,7 @@ async function fetchAndPrint(obj1, obj2) {
         pfp2.style.backgroundImage = 'url("./src/assets/images/people/image' + obj2.id + '.jpg"), url("./src/assets/images/people/error.jpg")'
         //___________________________________________________
 
-
+        //--- Hiding The additional info box below each card -------
         let addInfo1 = document.getElementById("additional-info1")
         addInfo1.innerHTML = ""
         addInfo1.style.display = "none"
@@ -66,8 +66,10 @@ async function fetchAndPrint(obj1, obj2) {
         let addInfo2 = document.getElementById("additional-info2")
         addInfo2.innerHTML = ""
         addInfo2.style.display = "none"
+        //________________________________
+
         //--- 
-        console.table(obj1,obj2)
+        console.table(obj1, obj2)
 
         await obj1.setHomePlanet()
         await obj2.setHomePlanet()
@@ -111,8 +113,10 @@ async function fetchAndPrint(obj1, obj2) {
 function setVideoSrc() {
     if (window.innerWidth < 768) {
         video.src = mobileSrc;
+        document.getElementById("background-video").src = "./"
     } else {
         video.src = desktopSrc;
+        document.getElementById("background-video").src = "./src/assets/videos/Star Wars - H264-compressed.mp4"
     }
 }
 
